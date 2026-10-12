@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Reading List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">COLLEGE READING LIST</p>
+        <h1>My Books</h1>
+        <p class="subtitle">Keep track of what you want to read.</p>
+      </div>
+    </header>
+
+    <section class="add-section">
+      <form id="bookForm" class="book-form">
+        <label for="bookTitle">Book title</label>
+
+        <div class="form-row">
+          <input
+            type="text"
+            id="bookTitle"
+            placeholder="e.g. Atomic Habits"
+            autocomplete="off"
+            required
+          />
+
+          <select id="bookStatus" aria-label="Book status">
+            <option value="To read">To read</option>
+            <option value="Reading">Reading</option>
+            <option value="Done">Done</option>
+          </select>
+
+          <button type="submit">Add book</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="stats" aria-label="Book counts">
+      <button class="filter active" data-filter="All">
+        <span>All</span>
+        <strong id="countAll">0</strong>
+      </button>
+
+      <button class="filter" data-filter="To read">
+        <span>To read</span>
+        <strong id="countToRead">0</strong>
+      </button>
+
+      <button class="filter" data-filter="Reading">
+        <span>Reading</span>
+        <strong id="countReading">0</strong>
+      </button>
+
+      <button class="filter" data-filter="Done">
+        <span>Done</span>
+        <strong id="countDone">0</strong>
+      </button>
+    </section>
+
+    <section id="bookList" class="book-list" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
